@@ -79,7 +79,7 @@ public class PantallaRegistrarCampo
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        spnSuperficie = new javax.swing.JSpinner();
+        spnSuperficieLote = new javax.swing.JSpinner();
         spnNroLote = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -92,8 +92,8 @@ public class PantallaRegistrarCampo
         tblLotes = new javax.swing.JTable();
         btnEditarLote = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnRegistrarCampo = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         spnSuperficieCampo = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -143,8 +143,8 @@ public class PantallaRegistrarCampo
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Nro.:");
 
-        spnSuperficie.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        spnSuperficie.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
+        spnSuperficieLote.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        spnSuperficieLote.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
 
         spnNroLote.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         spnNroLote.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
@@ -173,7 +173,7 @@ public class PantallaRegistrarCampo
         btnAgregarLote.setText("Agregar Lote");
         btnAgregarLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarLoteActionPerformed(evt);
+                btnAgregarLoteClick(evt);
             }
         });
 
@@ -197,7 +197,7 @@ public class PantallaRegistrarCampo
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(spnNroLote, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                                    .addComponent(spnSuperficie)
+                                    .addComponent(spnSuperficieLote)
                                     .addComponent(cmbTipoSuelo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(btnAgregarLote, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblLoteEnUso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -214,7 +214,7 @@ public class PantallaRegistrarCampo
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(spnSuperficie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnSuperficieLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbTipoSuelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,7 +232,7 @@ public class PantallaRegistrarCampo
         btnQuitarLote.setText("Quitar");
         btnQuitarLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitarLoteActionPerformed(evt);
+                btnQuitarLoteClick(evt);
             }
         });
 
@@ -244,7 +244,7 @@ public class PantallaRegistrarCampo
         btnEditarLote.setText("Editar");
         btnEditarLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarLoteActionPerformed(evt);
+                btnEditarLoteClick(evt);
             }
         });
 
@@ -290,16 +290,16 @@ public class PantallaRegistrarCampo
 
         jSeparator3.setForeground(new java.awt.Color(204, 204, 204));
 
-        jButton4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton4.setText("Registrar Campo");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarCampo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnRegistrarCampo.setText("Registrar Campo");
+        btnRegistrarCampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRegistrarCampoClick(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton5.setText("Cancelar");
+        btnCancelar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnCancelar.setText("Cancelar");
 
         spnSuperficieCampo.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
 
@@ -332,9 +332,9 @@ public class PantallaRegistrarCampo
                                 .addComponent(jLabel5))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton5)
+                        .addComponent(btnCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
+                        .addComponent(btnRegistrarCampo)))
                 .addContainerGap())
             .addComponent(jSeparator3)
         );
@@ -359,8 +359,8 @@ public class PantallaRegistrarCampo
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(btnRegistrarCampo)
+                    .addComponent(btnCancelar))
                 .addGap(22, 22, 22))
         );
 
@@ -371,7 +371,7 @@ public class PantallaRegistrarCampo
         this.controlarNombreCampo();
     }//GEN-LAST:event_txtNombreCampoFocusLost
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnRegistrarCampoClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCampoClick
 
         if (this.controlarValores()) {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "¿Confirma el registro del Campo?", "Registrar Campo", JOptionPane.YES_NO_OPTION);
@@ -388,13 +388,13 @@ public class PantallaRegistrarCampo
                 }
             }
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnRegistrarCampoClick
 
     private void spnNroLoteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_spnNroLoteFocusLost
         this.controlarNroLote();
     }//GEN-LAST:event_spnNroLoteFocusLost
 
-    private void btnAgregarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarLoteActionPerformed
+    private void btnAgregarLoteClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarLoteClick
         // Se controla que el número de lote esté disponible para la utilización
         if (!this.controlarNroLote()) {
             return;
@@ -407,13 +407,13 @@ public class PantallaRegistrarCampo
         se va a agregar un Lote */
         this.gestorCampos.agregarLote(
                 (Integer) this.spnNroLote.getValue(),
-                (Double) this.spnSuperficie.getValue(),
+                (Double) this.spnSuperficieLote.getValue(),
                 (TipoSuelo) this.cmbTipoSuelo.getSelectedItem()
         );
 
-    }//GEN-LAST:event_btnAgregarLoteActionPerformed
+    }//GEN-LAST:event_btnAgregarLoteClick
 
-    private void btnQuitarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarLoteActionPerformed
+    private void btnQuitarLoteClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarLoteClick
         // Se obtiene la selección de la grilla
         Optional<Lote> seleccionado = this.obtenerLoteSeleccionado();
         if (!seleccionado.isPresent()) { // Si no se seleccionó un lote...
@@ -422,9 +422,9 @@ public class PantallaRegistrarCampo
         }
         // Se quita el lote del campo
         this.gestorCampos.quitarLote(seleccionado.get());
-    }//GEN-LAST:event_btnQuitarLoteActionPerformed
+    }//GEN-LAST:event_btnQuitarLoteClick
 
-    private void btnEditarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLoteActionPerformed
+    private void btnEditarLoteClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLoteClick
         // Se obtiene el lote seleccionado de la grilla
         Optional<Lote> seleccionado = this.obtenerLoteSeleccionado();
         if (!seleccionado.isPresent()) { // Si no se seleccionó un lote...
@@ -436,10 +436,10 @@ public class PantallaRegistrarCampo
         Lote aEditar = seleccionado.get();
         this.gestorCampos.quitarLote(aEditar);
         this.spnNroLote.setValue(aEditar.getNumero());
-        this.spnSuperficie.setValue(aEditar.getSuperficie());
+        this.spnSuperficieLote.setValue(aEditar.getSuperficie());
         this.cmbTipoSuelo.setSelectedItem(aEditar.getTipoSuelo());
 
-    }//GEN-LAST:event_btnEditarLoteActionPerformed
+    }//GEN-LAST:event_btnEditarLoteClick
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         HibernateUtils.finalizeHibernate();
@@ -477,7 +477,7 @@ public class PantallaRegistrarCampo
      * @return true si el valor es correcto, false en caso contrario
      */
     private boolean controlarSuperficie() {
-        Double superficie = (Double) this.spnSuperficie.getValue();
+        Double superficie = (Double) this.spnSuperficieLote.getValue();
         if (superficie.equals(0.0)) { // Si la superficie es cero...
             JOptionPane.showMessageDialog(
                     rootPane,
@@ -607,7 +607,7 @@ public class PantallaRegistrarCampo
             this.lblNombreEnUso.setVisible(false);
             this.lblLoteEnUso.setVisible(false);
             this.spnNroLote.setValue(1);
-            this.spnSuperficie.setValue(0.0);
+            this.spnSuperficieLote.setValue(0.0);
             this.spnSuperficieCampo.setValue(0.0);
             this.cmbTipoSuelo.setModel(
                     new DefaultComboBoxModel(
@@ -634,11 +634,11 @@ public class PantallaRegistrarCampo
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarLote;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditarLote;
     private javax.swing.JButton btnQuitarLote;
+    private javax.swing.JButton btnRegistrarCampo;
     private javax.swing.JComboBox<TipoSuelo> cmbTipoSuelo;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
@@ -656,8 +656,8 @@ public class PantallaRegistrarCampo
     private javax.swing.JLabel lblNombreEnUso;
     private javax.swing.JLabel lblSuperficie;
     private javax.swing.JSpinner spnNroLote;
-    private javax.swing.JSpinner spnSuperficie;
     private javax.swing.JSpinner spnSuperficieCampo;
+    private javax.swing.JSpinner spnSuperficieLote;
     private javax.swing.JTable tblLotes;
     private javax.swing.JTextField txtNombreCampo;
     // End of variables declaration//GEN-END:variables
