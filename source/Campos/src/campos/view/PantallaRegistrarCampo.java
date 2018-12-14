@@ -236,6 +236,7 @@ public class PantallaRegistrarCampo
             }
         });
 
+        tblLotes.setAutoCreateRowSorter(true);
         tblLotes.setModel(new LotesTableModel());
         tblLotes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tblLotes);
@@ -451,6 +452,8 @@ public class PantallaRegistrarCampo
         if (indice == -1) { // Si no hay una selección...
             return Optional.empty();
         }
+        indice = this.tblLotes.convertRowIndexToModel(indice);
+        
         // Se devuelve el lote en ese índice
         return this.lotesTableModel.getLoteEn(indice);
     }
