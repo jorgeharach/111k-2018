@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="campos.model.Lote" table="lote">
+        <id name="id" column="lot_id">
+            <generator class="increment"/>
+        </id>
+        <property name="numero" column="lot_nro_lote" />
+        <property name="superficie" column="lot_superficie" />
+      
+        <many-to-one name="tipoSuelo" class="campos.model.TipoSuelo" column="lot_tipo_suelo" lazy="false" />
+      
+    </class>
+</hibernate-mapping>

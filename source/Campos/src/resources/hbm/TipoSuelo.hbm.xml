@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="campos.model.TipoSuelo" table="tipo_suelo">
+        <id name="numero" column="tis_numero"/>
+        <property name="descripcion" column="tis_descripcion" />
+    </class>
+</hibernate-mapping>
