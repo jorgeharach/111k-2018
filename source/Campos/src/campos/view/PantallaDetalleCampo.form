@@ -94,7 +94,6 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="tblLotes">
               <Properties>
-                <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="this.lotesTableModel" type="code"/>
                 </Property>

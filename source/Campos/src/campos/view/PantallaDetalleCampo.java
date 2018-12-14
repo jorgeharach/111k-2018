@@ -79,7 +79,6 @@ public class PantallaDetalleCampo extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lotes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 0, 24))); // NOI18N
 
-        tblLotes.setAutoCreateRowSorter(true);
         tblLotes.setModel(this.lotesTableModel);
         jScrollPane1.setViewportView(tblLotes);
 

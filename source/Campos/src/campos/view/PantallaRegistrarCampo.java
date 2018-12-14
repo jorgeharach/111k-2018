@@ -236,7 +236,6 @@ public class PantallaRegistrarCampo
             }
         });
 
-        tblLotes.setAutoCreateRowSorter(true);
         tblLotes.setModel(new LotesTableModel());
         tblLotes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tblLotes);
