@@ -230,6 +230,7 @@ public class PantallaRegistrarCampo
 
         btnQuitarLote.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnQuitarLote.setText("Quitar");
+        btnQuitarLote.setEnabled(false);
         btnQuitarLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitarLoteClick(evt);
@@ -243,6 +244,7 @@ public class PantallaRegistrarCampo
 
         btnEditarLote.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditarLote.setText("Editar");
+        btnEditarLote.setEnabled(false);
         btnEditarLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarLoteClick(evt);
@@ -293,6 +295,7 @@ public class PantallaRegistrarCampo
 
         btnRegistrarCampo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnRegistrarCampo.setText("Registrar Campo");
+        btnRegistrarCampo.setEnabled(false);
         btnRegistrarCampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarCampoClick(evt);
@@ -560,6 +563,7 @@ public class PantallaRegistrarCampo
                             this.txtNombreCampo.getText().trim()
                     );
             this.lblNombreEnUso.setVisible(!nombreDisponible);
+            this.btnRegistrarCampo.setEnabled(nombreDisponible);
             return nombreDisponible;
         } catch (GestorException ge) {
             JOptionPane.showMessageDialog(
@@ -587,6 +591,11 @@ public class PantallaRegistrarCampo
         this.lotesTableModel.setData(campoActual.getLotes());
         // Se setea, como sugerencia, el próximo número de lote
         this.spnNroLote.setValue(campoActual.getProximoNroLote());
+        // Si hay lotes, se habilita la edición y la quita 
+        boolean habilitarBotones = !campoActual.getLotes().isEmpty();
+        this.btnEditarLote.setEnabled(habilitarBotones);
+        this.btnQuitarLote.setEnabled(habilitarBotones);
+        this.btnRegistrarCampo.setEnabled(habilitarBotones);
     }
 
     /**
@@ -607,6 +616,9 @@ public class PantallaRegistrarCampo
             this.tblLotes.setModel(lotesTableModel);
             // Se pasan los campos a sus valores por defecto
             this.txtNombreCampo.setText("");
+            this.btnRegistrarCampo.setEnabled(false);
+            this.btnQuitarLote.setEnabled(false);
+            this.btnEditarLote.setEnabled(false);
             this.lblNombreEnUso.setVisible(false);
             this.lblLoteEnUso.setVisible(false);
             this.spnNroLote.setValue(1);
