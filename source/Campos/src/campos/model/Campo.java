@@ -102,6 +102,9 @@ public class Campo extends Observable {
     }
 
     public Integer getProximoNroLote() {
+        if(this.lotes.isEmpty()){
+            return 1;
+        }
         Lote max = Collections.max(lotes, new Comparator<Lote>() {
             @Override
             public int compare(Lote o1, Lote o2) {
